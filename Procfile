@@ -1,1 +1,1 @@
-web: java -jar target/retrieve-basic-info-0.0.1-SNAPSHOT.jar
+web: java -jar target/number-classification-api-0.0.1-SNAPSHOT.jar
