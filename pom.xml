@@ -11,8 +11,9 @@
 	<groupId>com.hng.stageone</groupId>
 	<artifactId>number-classification-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>number-classification-api</name>
-	<description>number-classification-api</description>
+	<description>API to return number classification</description>
 	<url/>
 	<licenses>
 		<license/>
