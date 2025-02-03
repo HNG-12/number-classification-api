@@ -20,9 +20,10 @@ public class NumberClassification {
     public ResponseEntity<?> classifyNumber(@RequestParam String number) {
         try {
             int parsedNumber = Integer.parseInt(number);
-            if (parsedNumber <= 0) {
-                return ResponseEntity.badRequest().body("Number must be greater than 0");
-            }
+//            if (parsedNumber <= 0) {
+//                ErrorResponse errorResponse = new ErrorResponse("alphabet", true);
+//                return ResponseEntity.badRequest().body(errorResponse);
+//            }
 
             // Check if number is prime
             boolean isPrime = NumberHelpers.isPrime(parsedNumber);
