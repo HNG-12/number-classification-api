@@ -49,7 +49,7 @@ public class NumberClassification {
 
             return ResponseEntity.ok(response);
         } catch (NumberFormatException e) {
-            ErrorResponse errorResponse = new ErrorResponse(number, true);
+            ErrorResponse errorResponse = new ErrorResponse("alphabet", true);
             return ResponseEntity.badRequest().body(errorResponse);
         }
     }
