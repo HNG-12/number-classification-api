@@ -46,7 +46,7 @@ number-classification-api
 │   │   │               │   └── NumberClassification.java
 │   │   │               ├── model
 │   │   │               │   └── NumberResponse.java
-│   |   |               |   └── ErrorResponse.java
+│   │   │               │   └── ErrorResponse.java
 │   │   │               ├── service
 │   │   │               │   └── NumberClassificationService.java
 │   │   │               └── util
@@ -64,6 +64,7 @@ number-classification-api
 │       │               │   └── NumberClassificationServiceTest.java
 │       │               └── util
 │       │                   └── NumberClassificationUtilTest.java
+```
 
 ## API Endpoint
 ```http
