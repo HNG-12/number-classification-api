@@ -32,6 +32,39 @@ mvn spring-boot:run
 GET http://localhost:8080/api/classify-number?number=599
 ```
 
+## Project Structure
+```bash
+number-classification-api
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── hng
+│   │   │           └── numberclassificationapi
+│   │   │               ├── NumberClassificationApiApplication.java
+│   │   │               ├── controller
+│   │   │               │   └── NumberClassification.java
+│   │   │               ├── model
+│   │   │               │   └── NumberResponse.java
+│   |   |               |   └── ErrorResponse.java
+│   │   │               ├── service
+│   │   │               │   └── NumberClassificationService.java
+│   │   │               └── util
+│   │   │                   └── NumberClassificationUtil.java
+│   └── test
+│       ├── java
+│       │   └── com
+│       │       └── hng
+│       │           └── numberclassificationapi
+│       │               ├── controller
+│       │               │   └── NumberClassificationControllerTest.java
+│       │               ├── model
+│       │               │   └── NumberClassificationTest.java
+│       │               ├── service
+│       │               │   └── NumberClassificationServiceTest.java
+│       │               └── util
+│       │                   └── NumberClassificationUtilTest.java
+
 ## API Endpoint
 ```http
 GET /api/classify-number?number={number}

@@ -1,8 +1,8 @@
 package com.hng.stageone.numberclassificationapi.controller;
 
-import com.hng.stageone.numberclassificationapi.dto.ErrorResponse;
-import com.hng.stageone.numberclassificationapi.dto.NumberResponse;
-import com.hng.stageone.numberclassificationapi.helpers.NumberHelpers;
+import com.hng.stageone.numberclassificationapi.model.ErrorResponse;
+import com.hng.stageone.numberclassificationapi.model.NumberResponse;
+import com.hng.stageone.numberclassificationapi.util.NumberHelpers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

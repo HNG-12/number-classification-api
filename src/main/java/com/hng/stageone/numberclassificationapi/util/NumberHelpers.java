@@ -1,4 +1,4 @@
-package com.hng.stageone.numberclassificationapi.helpers;
+package com.hng.stageone.numberclassificationapi.util;
 
 import org.springframework.web.client.RestTemplate;
 

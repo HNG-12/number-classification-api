@@ -1,4 +1,4 @@
-package com.hng.stageone.numberclassificationapi.dto;
+package com.hng.stageone.numberclassificationapi.model;
 
 import java.util.List;
 
