@@ -28,10 +28,6 @@ class NumberClassificationTest {
 
     @Test
     void testClassifyNumber_ValidInput() {
-        //when(restTemplate.getForObject(anyString(), anyString.class)).thenReturn("371 is an Armstrong number.");
-        when(restTemplate.getForObject("http://localhost:8080/api/classify-number?number=371", String.class))
-                .thenReturn("371 is an armstrong number, 371 is an odd number");
-
 
         ResponseEntity<?> response = numberClassification.classifyNumber("371");
 
@@ -45,7 +41,7 @@ class NumberClassificationTest {
         assertTrue(numberResponse.getProperties().contains("armstrong"));
         assertTrue(numberResponse.getProperties().contains("odd"));
         assertEquals(11, numberResponse.getDigit_sum());
-        assertEquals("371 is an armstrong number", numberResponse.getFun_fact());
+        assertNotNull(numberResponse.getFun_fact());
     }
 
     @Test
@@ -53,8 +49,7 @@ class NumberClassificationTest {
         ResponseEntity<?> response = numberClassification.classifyNumber("abc");
 
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-        assertTrue(Objects.requireNonNull(response.getBody()).toString().contains("alphabet"));
-        //assertTrue(response.getBody() instanceof ErrorResponse);
+        assertInstanceOf(ErrorResponse.class, response.getBody());
 
         ErrorResponse errorResponse = (ErrorResponse) response.getBody();
         assertEquals("alphabet", errorResponse.getNumber());

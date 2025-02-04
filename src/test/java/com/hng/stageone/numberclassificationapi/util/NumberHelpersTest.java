@@ -33,7 +33,7 @@ class NumberHelpersTest {
         assertTrue(NumberHelpers.isArmstrongNumber(153));
         assertTrue(NumberHelpers.isArmstrongNumber(371));
         assertTrue(NumberHelpers.isArmstrongNumber(9474));
-        assertFalse(NumberHelpers.isArmstrongNumber(5));
+        assertFalse(NumberHelpers.isArmstrongNumber(123));
         assertFalse(NumberHelpers.isArmstrongNumber(10));
     }
 
