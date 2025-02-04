@@ -23,13 +23,31 @@ git clone https://github.com/HNG-12/number-classification-api.git
 ```bash
 cd number-classification-api
 ```
-3. Run the application.
+3. Build the application.
+```bash
+mvn clean package
+```
+4. Run the application.
 ```bash
 mvn spring-boot:run
 ```
-4. Open Postman and test the API.
+5. Open Postman and test the API.
 ```http
 GET http://localhost:8080/api/classify-number?number=599
+```
+5. Use cURL to test the API.
+```bash
+curl -X GET "http://localhost:8080/api/classify-number?number=599" -H "accept: application/json"
+```
+
+6. Run the tests.
+```bash
+mvn test
+```
+
+7. Run Test Coverage.
+```bash
+mvn clean test jacoco:report
 ```
 
 ## Project Structure
