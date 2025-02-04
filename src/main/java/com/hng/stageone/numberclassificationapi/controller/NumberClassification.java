@@ -14,16 +14,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class NumberClassification {
-    // Endpoint: GET /api/classify-number?number=371
 
     @GetMapping("/classify-number")
     public ResponseEntity<?> classifyNumber(@RequestParam String number) {
         try {
             int parsedNumber = Integer.parseInt(number);
-//            if (parsedNumber <= 0) {
-//                ErrorResponse errorResponse = new ErrorResponse("alphabet", true);
-//                return ResponseEntity.badRequest().body(errorResponse);
-//            }
 
             // Check if number is prime
             boolean isPrime = NumberHelpers.isPrime(parsedNumber);

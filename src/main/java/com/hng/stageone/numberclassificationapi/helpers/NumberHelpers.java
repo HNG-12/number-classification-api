@@ -29,9 +29,11 @@ public class NumberHelpers {
     public static boolean isArmstrongNumber(int number) {
         int sum = 0;
         int temp = number;
+        String numberString = String.valueOf(number);
+        int power = numberString.length();
         while (temp != 0) {
             int remainder = temp % 10;
-            sum += (int) Math.pow(remainder, 3);
+            sum += (int) Math.pow(remainder, power);
             temp /= 10;
         }
         return sum == number;
@@ -57,16 +59,6 @@ public class NumberHelpers {
         }
     }
 
-//    public int sumDigits(int number) {
-//        int sum = 0;
-//        while (number > 10) {
-//            sum += sumOfDigits(number);
-//            number = sum;
-//        }
-//        sum += number;
-//        return sum;
-//    }
-
     public static List<String> getProperties(int number) {
         List<String> properties = new ArrayList<>();
         if (isArmstrongNumber(number)) {
@@ -80,6 +72,17 @@ public class NumberHelpers {
         return properties;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -105,5 +108,19 @@ public static String numberFunFact(int number) {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return "Failed to fetch fun fact.";
+    }
+ */
+
+/*
+    public int sumDigits(int number) {
+        int sum = 0;
+        while (number > 10) {
+            sum += sumOfDigits(number);
+            number = sum;
+        }
+        sum += number;
+        return sum;
     }
  */
