@@ -2,7 +2,7 @@ package com.hng.stageone.numberclassificationapi.model;
 
 import java.util.List;
 
-public class NumberResponse {
+public class SuccessResponse {
     private int number;
     private boolean is_prime;
     private boolean is_perfect;
@@ -10,7 +10,7 @@ public class NumberResponse {
     private String fun_fact;
     private List<String> properties;
 
-    public NumberResponse(int number, boolean is_prime, boolean is_perfect, int digit_sum, String fun_fact, List<String> properties) {
+    public SuccessResponse(int number, boolean is_prime, boolean is_perfect, int digit_sum, String fun_fact, List<String> properties) {
         this.number = number;
         this.is_prime = is_prime;
         this.is_perfect = is_perfect;

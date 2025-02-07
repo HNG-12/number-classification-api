@@ -1,7 +1,8 @@
 package com.hng.stageone.numberclassificationapi.controller;
 
 import com.hng.stageone.numberclassificationapi.model.ErrorResponse;
-import com.hng.stageone.numberclassificationapi.model.NumberResponse;
+import com.hng.stageone.numberclassificationapi.model.SuccessResponse;
+import com.hng.stageone.numberclassificationapi.service.NumberClassificationService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -9,40 +10,35 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class NumberClassificationTest {
+class NumberClassificationControllerTest {
 
     @Mock
-    private RestTemplate restTemplate;
+    private NumberClassificationService numberClassificationService;
 
     @InjectMocks
-    private NumberClassification numberClassification;
+    private NumberClassificationController numberClassificationController;
 
     @Test
     void testClassifyNumber_ValidInput() {
+        SuccessResponse mockSuccessResponse = new SuccessResponse(371, false, false, 11, "371 is an armstrong number", List.of("armstrong", "odd"));
+        when(numberClassificationService.classifyNumber(371)).thenReturn(mockSuccessResponse);
 
-        ResponseEntity<?> response = numberClassification.classifyNumber("371");
+        ResponseEntity<?> response = numberClassificationController.classifyNumber("371");
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertInstanceOf(NumberResponse.class, response.getBody());
-
-        NumberResponse numberResponse = (NumberResponse) response.getBody();
-        assertEquals(371, numberResponse.getNumber());
-        assertFalse(numberResponse.isIs_prime());
-        assertFalse(numberResponse.isIs_perfect());
-        assertTrue(numberResponse.getProperties().contains("armstrong"));
-        assertTrue(numberResponse.getProperties().contains("odd"));
-        assertEquals(11, numberResponse.getDigit_sum());
-        assertNotNull(numberResponse.getFun_fact());
+        assertInstanceOf(SuccessResponse.class, response.getBody());
     }
 
     @Test
     void testClassifyNumber_InvalidInput() {
-        ResponseEntity<?> response = numberClassification.classifyNumber("abc");
+        ResponseEntity<?> response = numberClassificationController.classifyNumber("abc");
 
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         assertInstanceOf(ErrorResponse.class, response.getBody());

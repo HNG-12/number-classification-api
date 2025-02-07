@@ -61,14 +61,14 @@ number-classification-api
 │   │   │           └── numberclassificationapi
 │   │   │               ├── NumberClassificationApiApplication.java
 │   │   │               ├── controller
-│   │   │               │   └── NumberClassification.java
+│   │   │               │   └── NumberClassificationController.java
 │   │   │               ├── model
-│   │   │               │   └── NumberResponse.java
+│   │   │               │   └── SuccessResponse.java
 │   │   │               │   └── ErrorResponse.java
 │   │   │               ├── service
 │   │   │               │   └── NumberClassificationService.java
 │   │   │               └── util
-│   │   │                   └── NumberClassificationUtil.java
+│   │   │                   └── NumberHelpers.java
 │   └── test
 │       ├── java
 │       │   └── com
@@ -76,12 +76,10 @@ number-classification-api
 │       │           └── numberclassificationapi
 │       │               ├── controller
 │       │               │   └── NumberClassificationControllerTest.java
-│       │               ├── model
-│       │               │   └── NumberClassificationTest.java
 │       │               ├── service
 │       │               │   └── NumberClassificationServiceTest.java
 │       │               └── util
-│       │                   └── NumberClassificationUtilTest.java
+│       │                   └── NumberHelpersTest.java
 ```
 
 ## API Endpoint
