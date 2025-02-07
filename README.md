@@ -82,7 +82,7 @@ number-classification-api
 │   │   │               │   └── NumberClassificationService.java
 │   │   │               └── util
 │   │   │                   └── NumberHelpers.java
-|   |   ├── resources
+│   │   ├── resources
             └── application.properties
 │   └── test
 │       ├── java
