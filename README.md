@@ -50,6 +50,19 @@ mvn test
 mvn clean test jacoco:report
 ```
 
+## Application Properties
+The application properties can be found in the `application.properties` file in the `resources` directory. The properties are:
+```aiignore
+spring.application.name=number-classification-api
+spring.web.cors.allowed-origins=*
+spring.web.cors.allowed-methods=GET,POST,PUT,DELETE,OPTIONS
+server.port=${PORT:8080}
+```
+- **spring.application.name:** The name of the application.
+- **spring.web.cors.allowed-methods:** The allowed methods for CORS.
+- **spring.web.cors.allowed-origins:** The allowed origins for CORS.
+- - **server.port:** The port number the application will run on.
+
 ## Project Structure
 ```bash
 number-classification-api
@@ -69,6 +82,8 @@ number-classification-api
 │   │   │               │   └── NumberClassificationService.java
 │   │   │               └── util
 │   │   │                   └── NumberHelpers.java
+|   |   ├── resources
+|   |   |   └── application.properties
 │   └── test
 │       ├── java
 │       │   └── com
