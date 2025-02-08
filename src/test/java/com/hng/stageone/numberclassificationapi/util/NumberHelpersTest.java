@@ -42,6 +42,7 @@ class NumberHelpersTest {
         assertEquals(6, NumberHelpers.sumOfDigits(123));
         assertEquals(10, NumberHelpers.sumOfDigits(1234));
         assertEquals(15, NumberHelpers.sumOfDigits(12345));
+        assertNotEquals(11, NumberHelpers.sumOfDigits(123));
     }
 
     @Test
